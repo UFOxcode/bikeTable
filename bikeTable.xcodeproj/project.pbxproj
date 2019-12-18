@@ -13,6 +13,8 @@
 		DC09E00C23AA27040078777F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC09E00A23AA27040078777F /* Main.storyboard */; };
 		DC09E00E23AA27060078777F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC09E00D23AA27060078777F /* Assets.xcassets */; };
 		DC09E01123AA27060078777F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC09E00F23AA27060078777F /* LaunchScreen.storyboard */; };
+		DC09E01923AA27F00078777F /* BikeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC09E01823AA27F00078777F /* BikeTableViewController.swift */; };
+		DC09E01B23AA282D0078777F /* Bike.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC09E01A23AA282D0078777F /* Bike.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		DC09E00D23AA27060078777F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC09E01023AA27060078777F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC09E01223AA27060078777F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC09E01823AA27F00078777F /* BikeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeTableViewController.swift; sourceTree = "<group>"; };
+		DC09E01A23AA282D0078777F /* Bike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bike.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +62,10 @@
 			children = (
 				DC09E00423AA27040078777F /* AppDelegate.swift */,
 				DC09E00623AA27040078777F /* SceneDelegate.swift */,
-				DC09E00823AA27040078777F /* ViewController.swift */,
 				DC09E00A23AA27040078777F /* Main.storyboard */,
+				DC09E01A23AA282D0078777F /* Bike.swift */,
+				DC09E00823AA27040078777F /* ViewController.swift */,
+				DC09E01823AA27F00078777F /* BikeTableViewController.swift */,
 				DC09E00D23AA27060078777F /* Assets.xcassets */,
 				DC09E00F23AA27060078777F /* LaunchScreen.storyboard */,
 				DC09E01223AA27060078777F /* Info.plist */,
@@ -140,6 +146,8 @@
 			files = (
 				DC09E00923AA27040078777F /* ViewController.swift in Sources */,
 				DC09E00523AA27040078777F /* AppDelegate.swift in Sources */,
+				DC09E01B23AA282D0078777F /* Bike.swift in Sources */,
+				DC09E01923AA27F00078777F /* BikeTableViewController.swift in Sources */,
 				DC09E00723AA27040078777F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
