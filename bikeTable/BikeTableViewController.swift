@@ -77,9 +77,11 @@ class BikeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "bikecell", for: indexPath)
         let bbkie = bikes[indexPath.row]
-        cell.textLabel?.text = bbkie.StationName.Zh_tw.description
+        
+        print ("ok")
+        cell.textLabel?.text = bbkie.StationName.Zh_tw
         print(bbkie.self.StationName.Zh_tw.description)
-        cell.detailTextLabel?.text = bbkie.StationAddress.Zh_tw.description
+        cell.detailTextLabel?.text = bbkie.StationAddress.Zh_tw
         print (bbkie.StationName.Zh_tw.description)
         // Configure the cell...
 

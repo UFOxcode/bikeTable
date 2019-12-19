@@ -9,12 +9,24 @@
 import Foundation
 
 struct bike :Codable {
-    let  StationName : StationName
-    let  StationAddress : StationAddress
+    var  StationName : StationName
+    var  StationAddress : StationAddress
 }
 struct StationName :Codable {
-    let Zh_tw : String
+    var Zh_tw : String
 }
 struct StationAddress:Codable {
-    let Zh_tw : String
+    var Zh_tw : String
 }
+
+//struct bike :Codable {
+//  let  StationName : StationName
+//  let  StationAddress : StationAddress
+//
+//struct StationName :Codable {
+//   let Zh_tw : String
+//}
+//struct StationAddress:Codable {
+//   let Zh_tw : String
+//}
+//}
