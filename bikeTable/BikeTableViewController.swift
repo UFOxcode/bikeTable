@@ -12,6 +12,7 @@ import CryptoKit
 class BikeTableViewController: UITableViewController {
     
     var bikes = [bike]()
+    var bikes2 = [BikeNew]()
     
     func getTimeString() -> String {
               let dateFormater = DateFormatter()
@@ -35,6 +36,9 @@ class BikeTableViewController: UITableViewController {
    hmac username="\(appId)", algorithm="hmac-sha256", headers="x-date", signature="\(base64HmacString)"
    """
    let url = URL(string: "https://ptx.transportdata.tw/MOTC/v2/Bike/Station/PingtungCounty?$top=30&$format=JSON")!
+        
+//        let url2 = URL(string: "https://ptx.transportdata.tw/MOTC/v2/Bike/Availability/PingtungCounty?$top=30&$format=JSON")!
+ 
    var request = URLRequest(url: url)
    request.setValue(xdate, forHTTPHeaderField: "x-date")
    request.setValue(authorization, forHTTPHeaderField: "Authorization")
@@ -58,8 +62,41 @@ class BikeTableViewController: UITableViewController {
        }
            }
         task.resume()
-        self.tableView.reloadData()
-       
+//        self.tableView.reloadData()
+ //second api
+        
+        let url2 = URL(string: "https://ptx.transportdata.tw/MOTC/v2/Bike/Availability/PingtungCounty?$top=30&$format=JSON")!
+          var request2 = URLRequest(url: url2)
+          request2.setValue(xdate, forHTTPHeaderField: "x-date")
+          request2.setValue(authorization, forHTTPHeaderField: "Authorization")
+         let task2 = URLSession.shared.dataTask(with: request2) { (data, response, error) in
+                   print ("here2")
+          //        let decoder = JSONDecoder()
+              if let data2 = data {
+                  do{
+                      let bikes2 = try JSONDecoder().decode([BikeNew].self, from: data2)
+                          self.bikes2 = bikes2
+                          DispatchQueue.main.async {
+                           print (bikes2)
+                            // 測試
+                              print(bikes2.count)
+                              print(bikes2[0])
+                           self.tableView.reloadData()
+                          }
+                  }catch{
+                      print (error)
+                  }
+              }
+                  }
+               task2.resume()
+               self.tableView.reloadData()
+        
+        
+        
+        
+        
+        
+        
       
     }
 
@@ -138,4 +175,19 @@ class BikeTableViewController: UITableViewController {
     }
     */
 
+    
+    @IBSegueAction func showDetail(_ coder: NSCoder) -> DetailViewController? {
+        if let row = tableView.indexPathForSelectedRow?.row{
+            let bike = bikes2[row]
+            let bikestation = bikes[row]
+            
+//            return DetailViewController (coder: coder, bike: bike)
+            return DetailViewController(coder: coder, bike: bike, bikestation: bikestation)
+        }else{
+        return nil
+    }
+    
+    
+    }
+    
 }
