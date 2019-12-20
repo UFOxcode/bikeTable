@@ -50,17 +50,20 @@ class BikeTableViewController: UITableViewController {
                      // 測試
                        print(bikes.count)                 
                        print(bikes[0])
-                    
+                    self.tableView.reloadData()
                    }
            }catch{
                print (error)
            }
        }
            }
-           task.resume()
-     self.tableView.reloadData()
+        task.resume()
+        self.tableView.reloadData()
+       
+      
     }
 
+     
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -75,6 +78,7 @@ class BikeTableViewController: UITableViewController {
 
   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "bikecell", for: indexPath)
         let bbkie = bikes[indexPath.row]
         
